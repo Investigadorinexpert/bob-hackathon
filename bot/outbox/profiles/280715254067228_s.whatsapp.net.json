@@ -1,0 +1,24 @@
+{
+  "sender_jid": "280715254067228@s.whatsapp.net",
+  "lang": "es",
+  "tier": "free",
+  "tags": {},
+  "first_seen": "2025-11-04T03:32:52.571638088-05:00",
+  "last_conn": "2025-11-04T03:32:52.571638088-05:00",
+  "last_chat": "",
+  "last_text": "",
+  "block": {
+    "spam": false,
+    "malicious": false,
+    "permanent": false,
+    "until": "0001-01-01T00:00:00Z"
+  },
+  "metrics": {
+    "msg_in": 0,
+    "msg_out": 1,
+    "last_msg_at": "2025-11-04T03:32:52.5717742-05:00",
+    "last_msg_id": "",
+    "streak_days": 0,
+    "streak_last_day": ""
+  }
+}

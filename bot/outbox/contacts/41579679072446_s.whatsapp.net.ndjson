@@ -1,0 +1,2 @@
+{"event_type":"events.IdentityChange","event_raw":null,"chat_jid":"41579679072446@s.whatsapp.net","extra":{"lang":"es","tenant":"acme"},"at":"2025-11-02T14:36:19Z"}
+{"event_type":"events.IdentityChange","event_raw":null,"chat_jid":"41579679072446@s.whatsapp.net","extra":{"lang":"es","tenant":"acme"},"at":"2025-11-04T18:20:49Z"}

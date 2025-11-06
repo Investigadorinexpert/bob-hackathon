@@ -1,0 +1,128 @@
+{
+  "sender_jid": "120363405974723838@g.us",
+  "lang": "es",
+  "tier": "free",
+  "tags": {
+    "out.group.120363405974723838@g.us": "outbox/groups/120363405974723838_g.us.ndjson"
+  },
+  "first_seen": "2025-11-02T19:33:30.581124861-05:00",
+  "last_conn": "2025-11-04T17:15:47.464220411-05:00",
+  "last_chat": "120363405974723838@g.us",
+  "last_text": "",
+  "media": {
+    "in": [
+      {
+        "direction": "in",
+        "chat_jid": "120363405974723838@g.us",
+        "sender_jid": "280715254067228:75@lid",
+        "message_id": "3EB008C2D578E20D666E09",
+        "type": "audio",
+        "mimetype": "audio/ogg; codecs=opus",
+        "at": "2025-11-04T21:18:55Z"
+      },
+      {
+        "direction": "in",
+        "chat_jid": "120363405974723838@g.us",
+        "sender_jid": "280715254067228:75@lid",
+        "message_id": "3EB08BCDB1B4DBA0868793",
+        "type": "document",
+        "mimetype": "application/octet-stream",
+        "title": "1",
+        "at": "2025-11-04T21:21:51Z"
+      },
+      {
+        "direction": "in",
+        "chat_jid": "120363405974723838@g.us",
+        "sender_jid": "280715254067228:75@lid",
+        "message_id": "3EB0C6A5386C6AC31F5316",
+        "type": "audio",
+        "mimetype": "audio/ogg; codecs=opus",
+        "url": "https://mmg.whatsapp.net/v/t62.7117-24/537823406_811804908486159_9069033354539925975_n.enc?ccb=11-4&oh=01_Q5Aa2wHU54AvRVINTVBl7KZ9JSiR9OIwu9KtfkpF3Ix7Jej17Q&oe=6931F3EF&_nc_sid=5e03e0&mms3=true",
+        "at": "2025-11-04T22:00:59Z",
+        "direct_path": "/v/t62.7117-24/537823406_811804908486159_9069033354539925975_n.enc?ccb=11-4&oh=01_Q5Aa2wHU54AvRVINTVBl7KZ9JSiR9OIwu9KtfkpF3Ix7Jej17Q&oe=6931F3EF&_nc_sid=5e03e0",
+        "media_key_b64": "evAeXAzOtb6ydoiIvqObpiJJjvpbngFMANM963TopNI=",
+        "file_sha256_b64": "UL6rt8aBkXkHyUYg8sky9Kw/KOGKMTmaiQFcNx9N3LQ=",
+        "file_enc_sha256_b64": "cuJ6/yswyODUMYlJFEV4ztjNAdvk7vX5OcKdGN1kbww=",
+        "file_length": 7490,
+        "seconds": 16
+      },
+      {
+        "direction": "in",
+        "chat_jid": "120363405974723838@g.us",
+        "sender_jid": "280715254067228@lid",
+        "message_id": "3A5C515D1469514D7330",
+        "type": "audio",
+        "mimetype": "audio/ogg; codecs=opus",
+        "url": "https://mmg.whatsapp.net/v/t62.7117-24/541934875_1353491373081792_2890150367175894769_n.enc?ccb=11-4&oh=01_Q5Aa2wF_2ph7DD_h9jonuOrSIi3Fi78VZPypWOtnqM7ugohTgw&oe=6931D3ED&_nc_sid=5e03e0&mms3=true",
+        "at": "2025-11-04T22:11:40Z",
+        "direct_path": "/v/t62.7117-24/541934875_1353491373081792_2890150367175894769_n.enc?ccb=11-4&oh=01_Q5Aa2wF_2ph7DD_h9jonuOrSIi3Fi78VZPypWOtnqM7ugohTgw&oe=6931D3ED&_nc_sid=5e03e0",
+        "media_key_b64": "kBMTv+PqNnNfpOLqYCSt2AOAEDG6D7zJoa25/1mfUUE=",
+        "file_sha256_b64": "Cdtvix+RPlqeReLX2OTaUbOkJfPYn47R5BPRBLyTl6E=",
+        "file_enc_sha256_b64": "vKn2JQ//kduPxeFSVWjxd8f0Pt+0PGVz3gV7Fyp7WkI=",
+        "file_length": 24811,
+        "seconds": 12
+      },
+      {
+        "direction": "in",
+        "chat_jid": "120363405974723838@g.us",
+        "sender_jid": "280715254067228:75@lid",
+        "message_id": "3EB04F7BE405D49D4DDE06",
+        "type": "document",
+        "mimetype": "application/pdf",
+        "title": "content.pdf",
+        "url": "https://mmg.whatsapp.net/v/t62.7119-24/541672624_2218091935352270_4373413779662939038_n.enc?ccb=11-4&oh=01_Q5Aa2wGoJjpSR69dfaB9b9lCqQVLNTYYJfDvveUAuGiQj9T10w&oe=6931F929&_nc_sid=5e03e0&mms3=true",
+        "at": "2025-11-04T22:15:22Z",
+        "direct_path": "/v/t62.7119-24/541672624_2218091935352270_4373413779662939038_n.enc?ccb=11-4&oh=01_Q5Aa2wGoJjpSR69dfaB9b9lCqQVLNTYYJfDvveUAuGiQj9T10w&oe=6931F929&_nc_sid=5e03e0",
+        "media_key_b64": "qXDnwtRjTJgrofkr3JBfiU6B0uKVWJH/UHkr4yVxYrk=",
+        "file_sha256_b64": "VUkKLK1AHRmqMGj2n89M7MmlCvxhbTXFoDB+4N+uF6c=",
+        "file_enc_sha256_b64": "HEum0x0oA0bpRxKLard8zdYoE6fZOGnWmpw+UEzhtV4=",
+        "file_length": 379758
+      },
+      {
+        "direction": "in",
+        "chat_jid": "120363405974723838@g.us",
+        "sender_jid": "280715254067228@lid",
+        "message_id": "3A82DCC0C51144A1B24A",
+        "type": "video",
+        "mimetype": "video/mp4",
+        "url": "https://mmg.whatsapp.net/v/t62.7161-24/536975376_1339479224221381_668287948560490301_n.enc?ccb=11-4&oh=01_Q5Aa2wHYAGXg7lNNNHGQUeJj4qX6h1Tz1gm787MtlS15VhDCjA&oe=6932036A&_nc_sid=5e03e0&mms3=true",
+        "at": "2025-11-04T22:15:44Z",
+        "direct_path": "/v/t62.7161-24/536975376_1339479224221381_668287948560490301_n.enc?ccb=11-4&oh=01_Q5Aa2wHYAGXg7lNNNHGQUeJj4qX6h1Tz1gm787MtlS15VhDCjA&oe=6932036A&_nc_sid=5e03e0",
+        "media_key_b64": "IJzX2jL65upjYdfzQDETmbwzPWqUnGMXdi69Rc68vTk=",
+        "file_sha256_b64": "DmGiQNKZYCdzZmry/Z5ov5R2XaaLVxsXyw1CE9j1DVU=",
+        "file_enc_sha256_b64": "Dq9bO8Y8QaKVS5sbkiL0kwuOF664II4h1LtGJfW0qGI=",
+        "file_length": 476542
+      },
+      {
+        "direction": "in",
+        "chat_jid": "120363405974723838@g.us",
+        "sender_jid": "280715254067228@lid",
+        "message_id": "3A14D02F7E126628AC66",
+        "type": "image",
+        "mimetype": "image/jpeg",
+        "url": "https://mmg.whatsapp.net/o1/v/t24/f2/m235/AQMOl5YoZTilVEwTCbw49NRWYgj5kjvrJOCblBOwcdpJHznArPWFGqoBjFgvShQm88YWm010K9y3dGlptTogyWicMycoMwRm5uHRnfizUg?ccb=9-4&oh=01_Q5Aa2wHT89sWR7oXjvph2NbDC4u3RSZycZ0hVRW8yIsO9DlH1A&oe=6931DC79&_nc_sid=e6ed6c&mms3=true",
+        "at": "2025-11-04T22:15:47Z",
+        "direct_path": "/o1/v/t24/f2/m235/AQMOl5YoZTilVEwTCbw49NRWYgj5kjvrJOCblBOwcdpJHznArPWFGqoBjFgvShQm88YWm010K9y3dGlptTogyWicMycoMwRm5uHRnfizUg?ccb=9-4&oh=01_Q5Aa2wHT89sWR7oXjvph2NbDC4u3RSZycZ0hVRW8yIsO9DlH1A&oe=6931DC79&_nc_sid=e6ed6c",
+        "media_key_b64": "dDLeVocINjwIePxgYCkRmEN+3zO6nxhM3qpOxZTwWAc=",
+        "file_sha256_b64": "gCajRdBZRwnFjAVM6S1YXPWHJRPoRhFiDTkrWaQFayw=",
+        "file_enc_sha256_b64": "R8To0xE0CPVXwyCOZBDbYmtb1Uw2J1VhZdR136e6f+Q=",
+        "file_length": 55576
+      }
+    ],
+    "out": null
+  },
+  "block": {
+    "spam": false,
+    "malicious": false,
+    "permanent": false,
+    "until": "0001-01-01T00:00:00Z"
+  },
+  "metrics": {
+    "msg_in": 26,
+    "msg_out": 14,
+    "last_msg_at": "2025-11-04T17:15:54.926199082-05:00",
+    "last_msg_id": "3A14D02F7E126628AC66",
+    "streak_days": 3,
+    "streak_last_day": "2025-11-04"
+  }
+}

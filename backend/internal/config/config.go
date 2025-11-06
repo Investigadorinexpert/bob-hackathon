@@ -1,0 +1,45 @@
+package config
+
+import (
+	"log"
+	"os"
+
+	"github.com/joho/godotenv"
+)
+
+type Config struct {
+	GeminiAPIKey    string
+	GeminiModel     string
+	Port            string
+	BOBAPIBaseURL   string
+}
+
+var AppConfig *Config
+
+func LoadConfig() {
+	// Cargar .env
+	if err := godotenv.Load(); err != nil {
+		log.Println("No se encontró archivo .env, usando variables de entorno del sistema")
+	}
+
+	AppConfig = &Config{
+		GeminiAPIKey:  getEnv("GEMINI_API_KEY", ""),
+		GeminiModel:   getEnv("GEMINI_MODEL", "gemini-2.0-flash-exp"),
+		Port:          getEnv("PORT", "3000"),
+		BOBAPIBaseURL: getEnv("BOB_API_BASE_URL", "https://apiv3.somosbob.com/v3"),
+	}
+
+	if AppConfig.GeminiAPIKey == "" {
+		log.Fatal("GEMINI_API_KEY es requerido")
+	}
+
+	log.Printf("Configuración cargada - Puerto: %s, Modelo: %s", AppConfig.Port, AppConfig.GeminiModel)
+}
+
+func getEnv(key, defaultValue string) string {
+	value := os.Getenv(key)
+	if value == "" {
+		return defaultValue
+	}
+	return value
+}

@@ -1,0 +1,46 @@
+🚗 Introducción de la Data – Hackathon SomosBob 2025
+
+La base de datos presentada contiene información realista de vehículos livianos en subasta, utilizada en el ecosistema SomosBob. Cada registro representa un vehículo disponible, con detalles técnicos, comerciales y logísticos que permiten realizar análisis, predicciones y automatizaciones dentro de una plataforma de subastas.
+
+El objetivo de esta data es ofrecer a los equipos la oportunidad de desarrollar soluciones innovadoras que mejoren la eficiencia, transparencia y experiencia de usuario en los procesos de subasta.
+📋 Descripción de las Columnas
+Columna    Descripción
+title    Identificador del vehículo (marca, modelo y placa).
+precio_base    Precio inicial con el que el vehículo entra en subasta.
+tipo_moneda    Tipo de moneda usada (USD o PEN).
+ubicacion    Lugar físico donde se encuentra el vehículo.
+marca    Marca del fabricante (ej. Chevrolet, Kia, Chery, etc.).
+modelo    Modelo o versión del vehículo.
+placa    Número de matrícula o placa del vehículo.
+kilometraje    Kilómetros recorridos por el vehículo.
+anio    Año de fabricación del vehículo.
+procedencia    País de origen o importación (ej. China).
+con_garantia    Indica si el vehículo cuenta con garantía (TRUE/FALSE).
+categoria    Tipo de vehículo (en este caso, “Vehículos livianos”).
+tipo_subasta    Modalidad de subasta (ej. “En vivo”).
+empresa_proveedora    Empresa que provee el vehículo (ej. Santander Consumer, Pacífico Seguros).
+
+
+🧠 #📂・recursos-hackathon
+
+🚀 Recursos oficiales de la Hackathon SomosBob 2025
+
+Aquí encontrarás los archivos y endpoints necesarios para desarrollar tu proyecto:
+
+📊 Excel: contiene los datos base que podrás usar en tu app o análisis.
+⚙️ API: provee datos reales y actualizados para pruebas e integraciones.
+
+💡 Usa estos recursos para construir tu MVP durante la hackathon.
+Si necesitas soporte técnico o documentación adicional, consulta el canal #💬・desarrollo-web.
+⚙️ Endpoint de la API (método GET)
+GET https://apiv3.somosbob.com/v3/sublots/details
+
+📌 Instrucciones breves
+
+Haz la petición en tu navegador, Postman, cURL o tu entorno favorito.
+
+No hace falta cuerpo (body) si solo es GET simple; sólo la URL.
+
+Asegúrate de tener conexión a Internet y permisos de acceso (si aplica).
+
+Integralo en tu app, dashboard o script para obtener los datos que necesitas.

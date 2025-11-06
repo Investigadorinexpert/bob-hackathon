@@ -1,0 +1,36 @@
+{
+  "web-2e93b432-8470-491e-9e54-355b6725421d": {
+    "sessionId": "web-2e93b432-8470-491e-9e54-355b6725421d",
+    "channel": "web",
+    "score": 30,
+    "category": "cold",
+    "urgency": "none",
+    "budget": "undefined",
+    "businessType": "unknown",
+    "reasons": [
+      "Preguntas generales sobre la plataforma",
+      "No hay indicación de urgencia",
+      "No hay indicación de presupuesto"
+    ],
+    "lastMessage": "para que sirve??",
+    "createdAt": "0001-01-01T00:00:00Z",
+    "updatedAt": "2025-11-05T22:24:36.296275-05:00"
+  },
+  "web-3ffbd5a8-f0ba-4cbd-9530-ea4700584407": {
+    "sessionId": "web-3ffbd5a8-f0ba-4cbd-9530-ea4700584407",
+    "channel": "web",
+    "score": 35,
+    "category": "cold",
+    "urgency": "none",
+    "budget": "undefined",
+    "businessType": "unknown",
+    "reasons": [
+      "Muestra interés en una marca específica (Toyota).",
+      "No hay urgencia aparente.",
+      "El presupuesto es desconocido."
+    ],
+    "lastMessage": "Hola, busco un auto Toyota",
+    "createdAt": "2025-11-05T22:07:07.362841-05:00",
+    "updatedAt": "2025-11-05T22:07:07.362841-05:00"
+  }
+}

@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>WhatsUI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+      body { font-family: system-ui, sans-serif; margin: 24px; }
+      .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin-bottom: 16px; }
+      label { display:block; margin-top: 8px; font-weight:600 }
+      input, textarea { width:100%; padding:8px; border-radius:8px; border:1px solid #ccc }
+      button { padding:10px 14px; border-radius:10px; border:1px solid #333; cursor:pointer }
+      .row { display:flex; gap:16px; flex-wrap:wrap }
+      .col { flex:1; min-width:280px }
+      .muted { color:#666 }
+      pre { background:#f7f7f7; padding:8px; border-radius:8px; overflow:auto; }
+    </style>
+  </head>
+  <body>
+    <h1>WhatsUI</h1>
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <h2>Status</h2>
+          <div id="status" class="muted">loading…</div>
+          <button onclick="refreshStatus()">Refresh</button>
+        </div>
+        <div class="card">
+          <h2>Filters</h2>
+          <label><input type="checkbox" id="blockNonContacts"> Block non-contacts</label>
+          <label>Only from JID
+            <input type="text" id="onlyFromJID" placeholder="12345@s.whatsapp.net"/>
+          </label>
+          <button onclick="saveFilters()">Save Filters</button>
+          <pre id="filtersOut" class="muted"></pre>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <h2>Send Message</h2>
+          <label>To JID</label>
+          <input id="jid" placeholder="12345@s.whatsapp.net"/>
+          <label>Text</label>
+          <textarea id="text" rows="5" placeholder="Hola desde WhatsUI"></textarea>
+          <button onclick="sendMsg()">Send</button>
+          <pre id="sendOut" class="muted"></pre>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      async function refreshStatus(){
+        const r = await fetch('/api/status'); 
+        const j = await r.json();
+        document.getElementById('status').textContent = JSON.stringify(j);
+      }
+      async function loadFilters(){
+        const r = await fetch('/api/filters'); 
+        const j = await r.json();
+        document.getElementById('blockNonContacts').checked = !!j.blockNonContacts;
+        document.getElementById('onlyFromJID').value = j.onlyFromJID||"";
+        document.getElementById('filtersOut').textContent = JSON.stringify(j, null, 2);
+      }
+      async function saveFilters(){
+        const body = {
+          blockNonContacts: document.getElementById('blockNonContacts').checked,
+          onlyFromJID: document.getElementById('onlyFromJID').value.trim()
+        };
+        const r = await fetch('/api/filters', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+        const j = await r.json();
+        document.getElementById('filtersOut').textContent = JSON.stringify(j, null, 2);
+      }
+      async function sendMsg(){
+        const body = {
+          jid: document.getElementById('jid').value.trim(),
+          text: document.getElementById('text').value
+        };
+        const r = await fetch('/api/send', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)});
+        const j = await r.json();
+        document.getElementById('sendOut').textContent = JSON.stringify(j, null, 2);
+      }
+      refreshStatus(); loadFilters();
+    </script>
+  </body>
+</html>
