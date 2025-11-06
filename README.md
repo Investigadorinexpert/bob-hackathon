@@ -4,7 +4,26 @@ sistema de chatbot inteligente con arquitectura multiagente y lead scoring de 7 
 
 ## inicio rapido
 
-### opcion 1: script automatico (recomendado)
+### opcion 1: scripts en go (multiplataforma - recomendado)
+
+```bash
+# iniciar sistema completo
+go run start.go
+
+# detener sistema
+go run stop.go
+```
+
+estos scripts funcionan en **windows, linux y macos**:
+- verifican dependencias (go, node.js)
+- limpian puertos anteriores (cross-platform)
+- verifican archivos .env
+- inician backend en puerto 3000
+- inician frontend en puerto 5173
+- muestran urls y endpoints disponibles
+- manejo de ctrl+c para detener servicios
+
+### opcion 2: scripts bash (unix/macos/linux)
 
 ```bash
 ./start.sh
@@ -23,7 +42,7 @@ para detener todo:
 ./stop.sh
 ```
 
-### opcion 2: inicio manual
+### opcion 3: inicio manual
 
 backend:
 ```bash
@@ -273,8 +292,10 @@ frontend/
 │   └── app.jsx
 └── vite.config.js
 
-start.sh                       # script inicio automatico
-stop.sh                        # script detener servicios
+start.go                       # script inicio go (multiplataforma)
+stop.go                        # script detener go (multiplataforma)
+start.sh                       # script inicio bash (unix)
+stop.sh                        # script detener bash (unix)
 test_multiagent.py             # suite de pruebas
 ```
 
@@ -323,6 +344,11 @@ gemini no responde:
 
 puertos ocupados:
 ```bash
+# opcion 1: scripts go (multiplataforma)
+go run stop.go
+go run start.go
+
+# opcion 2: scripts bash (unix)
 ./stop.sh
 ./start.sh
 ```
