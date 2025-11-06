@@ -372,21 +372,81 @@ go run start.go
 6. sistema clasifica lead (hot/warm/cold/discarded)
 7. retorna respuesta + score actualizado
 
+## integracion whatsapp
+
+el bot de whatsapp se integra con el backend via http:
+
+```
+usuario whatsapp
+    ↓
+bot/cmd/whserver/main.go
+    ↓
+POST http://localhost:3000/api/chat/message
+{
+  "sessionId": "wa-51999999999",
+  "message": "busco un auto",
+  "channel": "whatsapp"
+}
+    ↓
+backend multiagente + gemini ai
+    ↓
+respuesta + lead score
+    ↓
+usuario whatsapp
+```
+
+para iniciar el bot:
+```bash
+cd bot
+go run cmd/whserver/main.go
+```
+
+el bot genera logs con scoring:
+```
+[INFO] bob_backend_reply from=51999999999 score=75 category=hot
+```
+
+## testing avanzado
+
+script de testing exhaustivo:
+```bash
+python3 exploit_system.py
+```
+
+simula 6 tipos de clientes:
+1. comprador urgente (hot)
+2. tire-patadas (discarded)
+3. interesado moderado (warm)
+4. spam/ambiguo
+5. solo faqs
+6. buscador vehiculos
+
+analiza:
+- scoring 7 dimensiones
+- boosts y penalizaciones
+- historial completo
+- estadisticas
+
+entorno aislado:
+```bash
+./setup_test_env.sh  # crea data-test/
+cd backend
+export $(cat .env.test | xargs)
+go run cmd/server/main.go  # corre en puerto 3001
+```
+
 ## estado del proyecto
 
 - [x] backend go funcionando
 - [x] frontend react completo
 - [x] sistema multiagente (orchestrator + 3 subagentes)
 - [x] scoring 7 dimensiones oficial
-- [x] orchestrator con spam detection
-- [x] faq agent especializado
-- [x] auction agent especializado
-- [x] scoring agent con boosts y penalizaciones
+- [x] bot whatsapp integrado y funcionando
 - [x] api bob conectada
 - [x] 62 faqs cargadas
 - [x] scripts de inicio automatico
-- [x] suite de pruebas
-- [x] integracion whatsapp ready
+- [x] suite de pruebas completa
+- [x] bugs criticos corregidos (smoothing, validacion, stats)
 - [ ] deploy a produccion
 
 ## notas tecnicas

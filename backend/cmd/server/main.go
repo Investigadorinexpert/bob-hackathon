@@ -3,6 +3,7 @@ package main
 import (
 	"bob-hackathon/internal/config"
 	"bob-hackathon/internal/controllers"
+	"bob-hackathon/internal/middleware"
 	"bob-hackathon/internal/models"
 	"bob-hackathon/internal/services"
 	"fmt"
@@ -18,6 +19,9 @@ func main() {
 	// Cargar configuración
 	config.LoadConfig()
 
+	// Configurar modo Gin (release o debug)
+	gin.SetMode(gin.ReleaseMode)
+
 	// Inicializar servicios
 	log.Println("Inicializando servicios...")
 	services.GetFAQService()
@@ -25,8 +29,13 @@ func main() {
 	services.GetSessionService()
 	services.GetGeminiService()
 
-	// Crear router
-	router := gin.Default()
+	// Crear router con middleware manual
+	router := gin.New()
+	router.Use(gin.Logger())
+	router.Use(gin.Recovery())
+
+	// Configurar trusted proxies (solo localhost en desarrollo)
+	router.SetTrustedProxies(nil)
 
 	// Configurar CORS
 	corsOrigins := strings.Split(config.AppConfig.CORSOrigins, ",")
@@ -110,8 +119,9 @@ func main() {
 	router.GET("/api/vehicles", leadController.GetVehicles)
 	router.GET("/api/vehicles/:id", leadController.GetVehicleByID)
 
-	// Rutas de Admin
+	// Rutas de Admin (protegidas con autenticación)
 	adminRoutes := router.Group("/api/admin")
+	adminRoutes.Use(middleware.AdminAuth())
 	{
 		// FAQs management
 		adminRoutes.POST("/faqs/upload", adminController.UploadFAQs)
