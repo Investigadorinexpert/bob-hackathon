@@ -1,18 +1,18 @@
-# 📢 PARA EL EQUIPO - BOB Hackathon
+# PARA EL EQUIPO - BOB Hackathon
 
-## 🎯 Resumen Ejecutivo
+## Resumen Ejecutivo
 
-**YA ESTÁ TODO LISTO Y FUNCIONANDO** ✅
+**YA ESTÁ TODO LISTO Y FUNCIONANDO**
 
-- ✅ Backend con Gemini AI 2.5 Flash
-- ✅ Frontend con chat interactivo
-- ✅ Lead scoring automático
-- ✅ Dashboard de leads en tiempo real
-- ✅ API REST completa
+- Backend con Gemini AI 2.5 Flash
+- Frontend con chat interactivo
+- Lead scoring automático
+- Dashboard de leads en tiempo real
+- API REST completa
 
 ---
 
-## 🚀 URLs Activas
+## URLs Activas
 
 ```
 Frontend Web:  http://localhost:5173
@@ -21,23 +21,23 @@ Backend API:   http://localhost:3000
 
 ---
 
-## 👥 División de Trabajo
+## División de Trabajo
 
-### Kevin (Backend + Frontend) ✅ COMPLETADO
-- ✅ Backend Node.js + Express
-- ✅ Integración Gemini AI
-- ✅ Sistema de scoring
-- ✅ API REST completa
-- ✅ Frontend React
-- ✅ Chat widget
-- ✅ Dashboard de leads
+### Kevin (Backend + Frontend) COMPLETADO
+- Backend Node.js + Express
+- Integración Gemini AI
+- Sistema de scoring
+- API REST completa
+- Frontend React
+- Chat widget
+- Dashboard de leads
 
-### Compañero (WhatsApp Integration) ⏳ PENDIENTE
+### Compañero (WhatsApp Integration) PENDIENTE
 **Solo necesitas agregar 20 líneas de código en tu bot de Go.**
 
 ---
 
-## 🔌 INTEGRACIÓN WHATSAPP (Copy & Paste)
+## INTEGRACIÓN WHATSAPP (Copy & Paste)
 
 ### En tu archivo `bot/cmd/whserver/main.go`:
 
@@ -108,14 +108,14 @@ func handleIncomingWhatsAppMessage(from string, body string) {
 
 ---
 
-## 🧪 Cómo Probar la Integración
+## Cómo Probar la Integración
 
 ### 1. Asegúrate que el backend de Kevin esté corriendo:
 ```bash
 curl http://localhost:3000/health
 ```
 
-Si responde `{"status":"ok",...}` → ✅ Backend listo
+Si responde `{"status":"ok",...}` → Backend listo
 
 ### 2. Prueba la integración con curl:
 ```bash
@@ -146,7 +146,7 @@ Deberías recibir:
 
 ---
 
-## 📊 Lo que Obtienes del Backend
+## Lo que Obtienes del Backend
 
 Cuando llamas al endpoint `/api/chat/message`, recibes:
 
@@ -167,7 +167,7 @@ Cuando llamas al endpoint `/api/chat/message`, recibes:
 
 ---
 
-## 🎯 Para la Demo del Hackathon
+## Para la Demo del Hackathon
 
 ### Flujo de Presentación:
 
@@ -191,15 +191,15 @@ Respuesta ← Bot Go ← Backend Kevin ← Respuesta
 ```
 
 **4. Destacar Features (1 min)**
-- ✅ Modular (REST API)
-- ✅ Multi-canal (Web + WhatsApp)
-- ✅ IA Moderna (Gemini 2.5 Flash)
-- ✅ Lead scoring automático
-- ✅ Dashboard en tiempo real
+- Modular (REST API)
+- Multi-canal (Web + WhatsApp)
+- IA Moderna (Gemini 2.5 Flash)
+- Lead scoring automático
+- Dashboard en tiempo real
 
 ---
 
-## ❓ Preguntas Frecuentes
+## Preguntas Frecuentes
 
 ### ¿Qué hace el backend de Kevin?
 - Recibe mensajes (web o WhatsApp)
@@ -225,7 +225,7 @@ Respuesta ← Bot Go ← Backend Kevin ← Respuesta
 
 ---
 
-## 🆘 Si Algo No Funciona
+## Si Algo No Funciona
 
 ### Backend no responde:
 ```bash
@@ -253,7 +253,7 @@ Si esto funciona → Tu integración funcionará.
 
 ---
 
-## 📱 Contacto
+## Contacto
 
 **Kevin (Backend/Frontend)**
 - Ya está todo listo de mi lado
@@ -266,7 +266,7 @@ Si esto funciona → Tu integración funcionará.
 
 ---
 
-## ✅ Checklist Pre-Demo
+## Checklist Pre-Demo
 
 - [ ] Backend corriendo (http://localhost:3000/health)
 - [ ] Frontend corriendo (http://localhost:5173)
@@ -277,10 +277,10 @@ Si esto funciona → Tu integración funcionará.
 
 ---
 
-**🎯 TODO LISTO. Solo falta integrar WhatsApp.**
+**TODO LISTO. Solo falta integrar WhatsApp.**
 
 **Tiempo estimado de integración: 30 minutos** ⏱️
 
 ---
 
-**Hackathon BOB 2025** 🚀
+**Hackathon BOB 2025**

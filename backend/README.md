@@ -115,13 +115,13 @@ curl http://localhost:3000/api/leads
 
 ## Características
 
-✅ **Gemini 2.0 Flash** - Modelo más reciente
-✅ **Lead Scoring** - Automático con IA
-✅ **Multi-canal** - Web + WhatsApp
-✅ **Session Management** - Persistente
-✅ **BOB API** - Integración con datos reales
-✅ **FAQs** - Base de conocimiento
-✅ **CORS** - Habilitado para frontend
+**Gemini 2.0 Flash** - Modelo más reciente
+**Lead Scoring** - Automático con IA
+**Multi-canal** - Web + WhatsApp
+**Session Management** - Persistente
+**BOB API** - Integración con datos reales
+**FAQs** - Base de conocimiento
+**CORS** - Habilitado para frontend
 
 ## Diferencias con la versión Node.js
 

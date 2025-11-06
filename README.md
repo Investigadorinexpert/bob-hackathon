@@ -1,18 +1,18 @@
-# 🤖 BOB Chatbot - Hackathon 2025
+# BOB Chatbot - Hackathon 2025
 
 Backend en **Go** con Gemini AI, lead scoring automático y arquitectura modular para BOB Subastas.
 
-## 🎯 Features
+## Features
 
-- ✅ **Gemini AI Integration** - Respuestas inteligentes y contextuales
-- ✅ **Lead Scoring Automático** - Calificación de leads en tiempo real
-- ✅ **Session Management** - Conversaciones persistentes por sessionId
-- ✅ **Multi-canal** - Soporte para Web y WhatsApp
-- ✅ **API REST** - Endpoints documentados y fáciles de integrar
-- ✅ **BOB API Integration** - Datos en tiempo real de subastas
-- ✅ **FAQs Inteligentes** - Base de conocimiento con 62+ preguntas frecuentes
+- **Gemini AI Integration** - Respuestas inteligentes y contextuales
+- **Lead Scoring Automático** - Calificación de leads en tiempo real
+- **Session Management** - Conversaciones persistentes por sessionId
+- **Multi-canal** - Soporte para Web y WhatsApp
+- **API REST** - Endpoints documentados y fáciles de integrar
+- **BOB API Integration** - Datos en tiempo real de subastas
+- **FAQs Inteligentes** - Base de conocimiento con 62+ preguntas frecuentes
 
-## 🏗️ Arquitectura
+## Arquitectura
 
 ```
 ┌─────────────┐         ┌──────────────┐
@@ -35,11 +35,11 @@ Backend en **Go** con Gemini AI, lead scoring automático y arquitectura modular
 └────────┘ └────────┘ └────────┘
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
-> **📌 IMPORTANTE**: Lee el [QUICKSTART.md](QUICKSTART.md) para instrucciones detalladas paso a paso.
+> **IMPORTANTE**: Lee el [QUICKSTART.md](QUICKSTART.md) para instrucciones detalladas paso a paso.
 
-### ⚡ Inicio Rápido (2 comandos)
+### Inicio Rápido (2 comandos)
 
 **Terminal 1 - Backend:**
 ```bash
@@ -47,7 +47,7 @@ cd backend
 npm install    # Solo primera vez
 npm start
 ```
-✅ Backend: http://localhost:3000
+Backend: http://localhost:3000
 
 **Terminal 2 - Frontend:**
 ```bash
@@ -55,12 +55,12 @@ cd frontend
 npm install    # Solo primera vez
 npm run dev
 ```
-✅ Frontend: http://localhost:5173
+Frontend: http://localhost:5173
 
-### 🎯 Probar Ahora
+### Probar Ahora
 Abre tu navegador en: **http://localhost:5173**
 
-## 📚 API Endpoints
+## API Endpoints
 
 ### Chat
 
@@ -152,7 +152,7 @@ Query params:
 - limit: número de resultados (default: 10)
 ```
 
-## 🔥 Testing Rápido
+## Testing Rápido
 
 ### Con curl:
 
@@ -203,7 +203,7 @@ Importa esta colección:
 }
 ```
 
-## 🔌 Integración con WhatsApp Bot
+## Integración con WhatsApp Bot
 
 Tu compañero solo necesita hacer esto en su bot de Go:
 
@@ -234,26 +234,26 @@ func handleWhatsAppMessage(from string, message string) {
 }
 ```
 
-## 📊 Sistema de Scoring
+## Sistema de Scoring
 
 El sistema califica leads automáticamente:
 
-- **🔥 Hot (80-100)**: Lead caliente, enviar a comercial inmediatamente
+- **Hot (80-100)**: Lead caliente, enviar a comercial inmediatamente
   - Necesidad urgente y específica
   - Presupuesto definido
   - Empresa/negocio
 
-- **😐 Warm (50-79)**: Lead tibio, hacer seguimiento
+- **Warm (50-79)**: Lead tibio, hacer seguimiento
   - Interés genuino
   - Explorando opciones
   - Necesidad real pero no urgente
 
-- **❄️ Cold (0-49)**: Lead frío, base de datos
+- **Cold (0-49)**: Lead frío, base de datos
   - Solo curiosidad
   - Preguntas muy generales
   - Sin necesidad clara
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 - **Go 1.21+** - Backend de alto rendimiento
 - **Gin** - Framework web (similar a Express)
@@ -262,7 +262,7 @@ El sistema califica leads automáticamente:
 - **CORS** habilitado
 - **JSON** como base de datos temporal
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 backend/                  # Backend Go
@@ -280,21 +280,21 @@ backend/                  # Backend Go
 └── README.md            # Documentación
 ```
 
-## 🎯 Estado del Proyecto
+## Estado del Proyecto
 
-1. ✅ Backend Go funcionando
-2. ✅ Frontend React completo
-3. ✅ Dashboard de leads
-4. ✅ Gemini AI 2.0 Flash integrado
-5. ⏳ Integración WhatsApp (pendiente - tu compañero)
-6. ⏳ Deploy a producción
+1. Backend Go funcionando
+2. Frontend React completo
+3. Dashboard de leads
+4. Gemini AI 2.0 Flash integrado
+5. Integración WhatsApp (pendiente - tu compañero)
+6. Deploy a producción
 
-## 👥 Equipo
+## Equipo
 
 - **Kevin Navarro** - Backend + Frontend Web
 - **[Compañero]** - Integración WhatsApp
 
-## 📝 Notas
+## Notas
 
 - **Backend en Go**: Más rápido y eficiente que Node.js
 - **NO usa n8n**: Arquitectura más simple y directa
@@ -303,7 +303,7 @@ backend/                  # Backend Go
 - **Cache de API BOB**: 5 minutos
 - **Gemini 2.0 Flash**: Modelo más reciente y rápido
 
-## 🚀 Ventajas de Go
+## Ventajas de Go
 
 - **5-10x más rápido** que Node.js
 - **Concurrencia nativa** con goroutines
@@ -313,4 +313,4 @@ backend/                  # Backend Go
 
 ---
 
-**Hackathon BOB 2025** 🚀
+**Hackathon BOB 2025**

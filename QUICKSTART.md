@@ -1,24 +1,24 @@
-# 🚀 QUICKSTART - BOB Chatbot
+# QUICKSTART - BOB Chatbot
 
-## ⚡ Inicio Rápido (2 comandos)
+## Inicio Rápido (2 comandos)
 
-### 1️⃣ Iniciar Backend (Go)
+### Iniciar Backend (Go)
 ```bash
 cd backend
 go run cmd/server/main.go
 ```
-✅ Backend corriendo en: **http://localhost:3000**
+Backend corriendo en: **http://localhost:3000**
 
-### 2️⃣ Iniciar Frontend (Nueva terminal)
+### Iniciar Frontend (Nueva terminal)
 ```bash
 cd frontend
 npm run dev
 ```
-✅ Frontend corriendo en: **http://localhost:5173**
+Frontend corriendo en: **http://localhost:5173**
 
 ---
 
-## 🌐 URLs Importantes
+## URLs Importantes
 
 | Servicio | URL | Descripción |
 |----------|-----|-------------|
@@ -29,14 +29,14 @@ npm run dev
 
 ---
 
-## 🧪 Probar el Sistema
+## Probar el Sistema
 
 ### Opción 1: Interfaz Web (Recomendado)
 1. Abre: **http://localhost:5173**
 2. Escribe un mensaje en el chat
 3. El bot responde con Gemini AI
 4. Ve tu score en tiempo real
-5. Cambia a pestaña "📊 Leads" para ver dashboard
+5. Cambia a pestaña "Leads" para ver dashboard
 
 ### Opción 2: Con curl (Testing API)
 ```bash
@@ -60,7 +60,7 @@ curl http://localhost:3000/api/faqs
 
 ---
 
-## 📋 Endpoints API
+## Endpoints API
 
 ### Chat
 ```bash
@@ -86,7 +86,7 @@ GET /api/vehicles/:id           # Vehículo específico
 
 ---
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Backend no inicia
 ```bash
@@ -119,7 +119,7 @@ npm run dev
 
 ---
 
-## 💻 Desarrollo
+## Desarrollo
 
 ### Backend
 ```bash
@@ -151,7 +151,7 @@ npm run preview
 
 ---
 
-## 🔌 Integración WhatsApp (Para tu compañero)
+## Integración WhatsApp (Para tu compañero)
 
 Agregar en el bot de Go (`bot/cmd/whserver/main.go`):
 
@@ -204,9 +204,9 @@ func handleWhatsAppMessage(from string, message string) {
 
 ---
 
-## 📊 Features Disponibles
+## Features Disponibles
 
-### ✅ Backend
+### Backend
 - [x] Gemini 2.5 Flash AI
 - [x] Lead scoring automático (0-100)
 - [x] Session management
@@ -214,7 +214,7 @@ func handleWhatsAppMessage(from string, message string) {
 - [x] 62 FAQs cargadas
 - [x] Soporte multi-canal (web + WhatsApp)
 
-### ✅ Frontend
+### Frontend
 - [x] Chat widget interactivo
 - [x] Lead scoring en tiempo real
 - [x] Dashboard de leads
@@ -224,7 +224,7 @@ func handleWhatsAppMessage(from string, message string) {
 
 ---
 
-## 🎯 Para el Hackathon
+## Para el Hackathon
 
 ### Demo Flow:
 1. **Mostrar Frontend**: http://localhost:5173
@@ -235,16 +235,16 @@ func handleWhatsAppMessage(from string, message string) {
 6. **API**: Mostrar endpoints en Postman
 
 ### Puntos Clave del Pitch:
-- ✅ **Modular**: Backend REST API + Frontend + WhatsApp
-- ✅ **IA Moderna**: Gemini 2.5 Flash (último modelo)
-- ✅ **Scoring Automático**: Califica leads en tiempo real
-- ✅ **Sin n8n**: Más simple, más rápido
-- ✅ **Multi-canal**: Web + WhatsApp ready
-- ✅ **Datos Reales**: Conectado a API de BOB
+- **Modular**: Backend REST API + Frontend + WhatsApp
+- **IA Moderna**: Gemini 2.5 Flash (último modelo)
+- **Scoring Automático**: Califica leads en tiempo real
+- **Sin n8n**: Más simple, más rápido
+- **Multi-canal**: Web + WhatsApp ready
+- **Datos Reales**: Conectado a API de BOB
 
 ---
 
-## 📝 Notas
+## Notas
 
 - Backend guarda datos en `src/data/` (JSON temporal)
 - Frontend usa proxy de Vite para llamar al backend
@@ -255,4 +255,4 @@ func handleWhatsAppMessage(from string, message string) {
 
 **¿Problemas?** Revisa el README.md principal para más detalles.
 
-**Hackathon BOB 2025** 🚀
+**Hackathon BOB 2025**
