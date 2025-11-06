@@ -145,6 +145,19 @@ func (s *SessionService) CreateOrUpdateLead(leadData *models.Lead) {
 	log.Printf("Lead actualizado: %s - Score: %d (%s)", leadData.SessionID, leadData.Score, leadData.Category)
 }
 
+func (s *SessionService) GetAllSessions() ([]*models.Session, error) {
+    s.mu.Lock()
+    defer s.mu.Unlock()
+
+    var sessions []*models.Session
+    for _, session := range s.sessions {
+        sessions = append(sessions, session)
+    }
+
+    return sessions, nil
+}
+
+
 func (s *SessionService) GetAllLeads(category, channel string) []*models.Lead {
 	s.mu.RLock()
 	defer s.mu.RUnlock()

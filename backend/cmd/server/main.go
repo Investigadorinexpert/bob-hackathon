@@ -104,6 +104,7 @@ func main() {
 		chatRoutes.POST("/score", chatController.GetScore)
 		chatRoutes.GET("/history/:sessionId", chatController.GetHistory)
 		chatRoutes.DELETE("/session/:sessionId", chatController.DeleteSession)
+	    chatRoutes.GET("/sessions", chatController.GetAllSessions)
 	}
 
 	// Rutas de Leads
