@@ -141,6 +141,36 @@ func (l jlog) Error(msg string, kv ...any) { l.kv("error", msg, kv...) }
 //
 
 const maxLogText = 120
+// whserver: agrega esto (arriba, cerca de otras utils)
+func sanitizeID(s string) string {
+    s = strings.TrimSpace(s)
+    var b strings.Builder
+    for _, r := range s {
+        switch {
+        case r >= 'a' && r <= 'z',
+             r >= 'A' && r <= 'Z',
+             r >= '0' && r <= '9',
+             r == '_' || r == '-':
+            b.WriteRune(r)
+        default:
+            b.WriteRune('_')
+        }
+    }
+    out := b.String()
+    if out == "" { out = "unk" }
+    if len(out) > 64 { out = out[:64] }
+    return out
+}
+
+func waSessionID(senderJID, chatJID string) string {
+    if strings.Contains(chatJID, "@g.us") {
+        // grupos: une chat + sender
+        return "wa-" + sanitizeID(chatJID+"__"+senderJID)
+    }
+    base := senderJID
+    if base == "" { base = chatJID }
+    return "wa-" + sanitizeID(base)
+}
 
 func previewText(s string, max int) string {
 	s = strings.TrimSpace(s)
@@ -834,50 +864,43 @@ func (r *SimpleRouter) incOutboundFor(chatKey string) {
 // =======================
 //
 
-func callBOBBackend(fromPhone string, message string, logger jlog) string {
-	sessionId := "wa-" + fromPhone
+// reemplaza callBOBBackend por:
+func callBOBBackendWithSession(sessionId string, message string, logger jlog) string {
+    if strings.TrimSpace(message) == "" {
+        logger.Warn("skip_empty_message", "sessionId", sessionId)
+        return ""
+    }
+    payload := map[string]string{
+        "sessionId": sessionId,
+        "message":   message,
+        "channel":   "whatsapp",
+    }
+    reqBody, _ := json.Marshal(payload)
+    req, _ := http.NewRequest(http.MethodPost, "http://localhost:3000/api/chat/message", bytes.NewReader(reqBody))
+    req.Header.Set("Content-Type", "application/json")
 
-	payload := map[string]string{
-		"sessionId": sessionId,
-		"message":   message,
-		"channel":   "whatsapp",
-	}
-	jsonData, _ := json.Marshal(payload)
-
-	resp, err := http.Post(
-		"http://localhost:3000/api/chat/message",
-		"application/json",
-		bytes.NewBuffer(jsonData),
-	)
-	if err != nil {
-		logger.Warn("bob_backend_error", "err", err)
-		return "Lo siento, hubo un error procesando tu mensaje."
-	}
-	defer resp.Body.Close()
-
-	var result map[string]interface{}
-	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
-		logger.Warn("bob_backend_decode_error", "err", err)
-		return "Error procesando la respuesta."
-	}
-
-	if reply, ok := result["reply"].(string); ok {
-		// Log del lead score si viene
-		if score, ok2 := result["leadScore"].(float64); ok2 {
-			if category, ok3 := result["category"].(string); ok3 {
-				logger.Info("bob_backend_reply",
-					"from", fromPhone,
-					"score", int(score),
-					"category", category,
-					"reply_len", len([]rune(reply)),
-				)
-			}
-		}
-		return reply
-	}
-
-	return "No se pudo obtener respuesta del sistema."
+    resp, err := httpc.Do(req)
+    if err != nil {
+        logger.Warn("bob_backend_error", "err", err.Error())
+        return "Lo siento, hubo un error procesando tu mensaje."
+    }
+    defer resp.Body.Close()
+    bodyBytes, _ := io.ReadAll(resp.Body)
+    if resp.StatusCode/100 != 2 {
+        logger.Warn("bob_backend_non_2xx", "status", resp.StatusCode, "req_payload", payload, "resp_body_preview", previewText(string(bodyBytes), 300))
+        return "No se pudo procesar tu mensaje por ahora."
+    }
+    var result map[string]any
+    if err := json.Unmarshal(bodyBytes, &result); err != nil {
+        logger.Warn("bob_backend_decode_error", "err", err.Error(), "body_preview", previewText(string(bodyBytes), 300))
+        return "Error procesando la respuesta."
+    }
+    if reply, ok := result["reply"].(string); ok && strings.TrimSpace(reply) != "" {
+        return reply
+    }
+    return "No se pudo obtener respuesta del sistema."
 }
+
 
 //
 // =======================
@@ -1059,8 +1082,8 @@ func main() {
 		router.muLast.Unlock()
 
 		if ok && strings.TrimSpace(env.Text) != "" {
-			// Llamar al backend BOB de Kevin en vez del engine de reglas
-			reply := callBOBBackend(env.SenderJID, env.Text, logger)
+    		sessionID := waSessionID(env.SenderJID, env.ChatJID)
+    		reply := callBOBBackendWithSession(sessionID, env.Text, logger)
 
 			if strings.TrimSpace(reply) != "" {
 				wait := router.replyWithTyping(chat, reply)
