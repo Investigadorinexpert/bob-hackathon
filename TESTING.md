@@ -1,4 +1,4 @@
-# entorno de testing para claude
+# entorno de testing
 
 este entorno permite testing exhaustivo del sistema sin afectar datos de produccion.
 
@@ -71,9 +71,9 @@ permite simular un cliente paso a paso y ver:
 python3 exploit_system.py
 ```
 
-## que puede ver claude
+## que se puede analizar
 
-con este setup, claude puede:
+con este setup se puede:
 
 ### datos raw
 - leer `backend/data-test/sessions.json` directamente
