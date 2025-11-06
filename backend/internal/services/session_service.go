@@ -1,6 +1,7 @@
 package services
 
 import (
+	"bob-hackathon/internal/config"
 	"bob-hackathon/internal/models"
 	"encoding/json"
 	"log"
@@ -25,11 +26,12 @@ var sessionServiceOnce sync.Once
 
 func GetSessionService() *SessionService {
 	sessionServiceOnce.Do(func() {
+		dataDir := config.AppConfig.DataDir
 		sessionServiceInstance = &SessionService{
 			sessions:     make(map[string]*models.Session),
 			leads:        make(map[string]*models.Lead),
-			sessionsFile: filepath.Join("data", "sessions.json"),
-			leadsFile:    filepath.Join("data", "leads.json"),
+			sessionsFile: filepath.Join(dataDir, "sessions.json"),
+			leadsFile:    filepath.Join(dataDir, "leads.json"),
 		}
 		sessionServiceInstance.loadFromDisk()
 	})

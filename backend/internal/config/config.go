@@ -14,6 +14,7 @@ type Config struct {
 	BOBAPIBaseURL   string
 	CORSOrigins     string
 	FrontendURL     string
+	DataDir         string
 }
 
 var AppConfig *Config
@@ -31,13 +32,14 @@ func LoadConfig() {
 		BOBAPIBaseURL: getEnv("BOB_API_BASE_URL", "https://apiv3.somosbob.com/v3"),
 		CORSOrigins:   getEnv("CORS_ORIGINS", "http://localhost:5173,http://localhost:3000"),
 		FrontendURL:   getEnv("FRONTEND_URL", "http://localhost:5173"),
+		DataDir:       getEnv("DATA_DIR", "data"),
 	}
 
 	if AppConfig.GeminiAPIKey == "" {
 		log.Fatal("GEMINI_API_KEY es requerido")
 	}
 
-	log.Printf("Configuración cargada - Puerto: %s, Modelo: %s", AppConfig.Port, AppConfig.GeminiModel)
+	log.Printf("Configuración cargada - Puerto: %s, Modelo: %s, DataDir: %s", AppConfig.Port, AppConfig.GeminiModel, AppConfig.DataDir)
 }
 
 func getEnv(key, defaultValue string) string {

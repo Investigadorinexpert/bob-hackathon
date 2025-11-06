@@ -1,6 +1,7 @@
 package services
 
 import (
+	"bob-hackathon/internal/config"
 	"bob-hackathon/internal/models"
 	"encoding/csv"
 	"log"
@@ -29,7 +30,8 @@ func GetFAQService() *FAQService {
 }
 
 func (f *FAQService) loadFAQs() {
-	file, err := os.Open(filepath.Join("data", "faqs.csv"))
+	dataDir := config.AppConfig.DataDir
+	file, err := os.Open(filepath.Join(dataDir, "faqs.csv"))
 	if err != nil {
 		log.Printf("Error al abrir FAQs: %v", err)
 		return
@@ -135,7 +137,8 @@ func ReloadFAQs() {
 	service.faqs = []models.FAQ{}
 
 	// Recargar desde archivo
-	file, err := os.Open(filepath.Join("data", "faqs.csv"))
+	dataDir := config.AppConfig.DataDir
+	file, err := os.Open(filepath.Join(dataDir, "faqs.csv"))
 	if err != nil {
 		log.Printf("Error al abrir FAQs: %v", err)
 		return

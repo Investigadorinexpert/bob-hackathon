@@ -1,6 +1,7 @@
 package controllers
 
 import (
+	"bob-hackathon/internal/config"
 	"bob-hackathon/internal/services"
 	"encoding/csv"
 	"fmt"
@@ -83,11 +84,12 @@ func (a *AdminController) UploadFAQs(ctx *gin.Context) {
 	}
 
 	// Guardar archivo en data/faqs.csv
-	destPath := filepath.Join("data", "faqs.csv")
+	dataDir := config.AppConfig.DataDir
+	destPath := filepath.Join(dataDir, "faqs.csv")
 
 	// Crear backup del archivo anterior
 	if _, err := os.Stat(destPath); err == nil {
-		backupPath := filepath.Join("data", "faqs.csv.backup")
+		backupPath := filepath.Join(dataDir, "faqs.csv.backup")
 		os.Rename(destPath, backupPath)
 		log.Printf("Backup creado: %s", backupPath)
 	}
@@ -117,9 +119,10 @@ func (a *AdminController) GetPrompts(ctx *gin.Context) {
 	prompts := make(map[string]string)
 
 	agents := []string{"orchestrator", "faq", "auction", "scoring"}
+	dataDir := config.AppConfig.DataDir
 
 	for _, agent := range agents {
-		promptPath := filepath.Join("data", "prompts", agent+".txt")
+		promptPath := filepath.Join(dataDir, "prompts", agent+".txt")
 		content, err := os.ReadFile(promptPath)
 		if err != nil {
 			// Si no existe, devolver mensaje indicativo
@@ -177,7 +180,8 @@ func (a *AdminController) UpdatePrompt(ctx *gin.Context) {
 	}
 
 	// Crear directorio si no existe
-	promptsDir := filepath.Join("data", "prompts")
+	dataDir := config.AppConfig.DataDir
+	promptsDir := filepath.Join(dataDir, "prompts")
 	if err := os.MkdirAll(promptsDir, 0755); err != nil {
 		ctx.JSON(http.StatusInternalServerError, gin.H{
 			"success": false,
