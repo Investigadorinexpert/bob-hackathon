@@ -6,9 +6,9 @@
     "out.group.120363405974723838@g.us": "outbox/groups/120363405974723838_g.us.ndjson"
   },
   "first_seen": "2025-11-02T19:33:30.581124861-05:00",
-  "last_conn": "2025-11-04T17:15:47.464220411-05:00",
+  "last_conn": "2025-11-06T00:56:49.942234339-05:00",
   "last_chat": "120363405974723838@g.us",
-  "last_text": "",
+  "last_text": "habla",
   "media": {
     "in": [
       {
@@ -118,11 +118,11 @@
     "until": "0001-01-01T00:00:00Z"
   },
   "metrics": {
-    "msg_in": 26,
-    "msg_out": 14,
-    "last_msg_at": "2025-11-04T17:15:54.926199082-05:00",
-    "last_msg_id": "3A14D02F7E126628AC66",
-    "streak_days": 3,
-    "streak_last_day": "2025-11-04"
+    "msg_in": 27,
+    "msg_out": 15,
+    "last_msg_at": "2025-11-06T00:57:05.614425624-05:00",
+    "last_msg_id": "3EB0277D3BD867B1682D3B",
+    "streak_days": 1,
+    "streak_last_day": "2025-11-06"
   }
 }

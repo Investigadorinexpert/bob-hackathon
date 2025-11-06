@@ -476,3 +476,5 @@
 {"event_type":"receipt","event_raw":null,"chat_jid":"280715254067228@s.whatsapp.net","message_ids":["3EB05975C0FC2EE8F1CCAA"],"extra":{"lang":"es","tenant":"acme"},"at":"2025-11-06T05:50:10Z"}
 {"event_type":"chat_presence","event_raw":null,"chat_jid":"280715254067228@s.whatsapp.net","sender_jid":"280715254067228@lid","extra":{"media":"","state":"composing"},"at":"2025-11-06T05:51:46Z"}
 {"event_type":"receipt","event_raw":null,"chat_jid":"280715254067228@s.whatsapp.net","message_ids":["3EB07E0EAE850BBD5E5C9C"],"extra":{"lang":"es","tenant":"acme"},"at":"2025-11-06T05:52:03Z"}
+{"event_type":"chat_presence","event_raw":null,"chat_jid":"280715254067228@s.whatsapp.net","sender_jid":"280715254067228@lid","extra":{"media":"","state":"composing"},"at":"2025-11-06T05:54:45Z"}
+{"event_type":"receipt","event_raw":null,"chat_jid":"280715254067228@s.whatsapp.net","message_ids":["3EB07BFD9CECE3967BB457"],"extra":{"lang":"es","tenant":"acme"},"at":"2025-11-06T05:55:19Z"}

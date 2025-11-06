@@ -172,3 +172,68 @@
 2025/11/06 00:52:32 [INFO] filtered reason direction_out chat 51958662499@s.whatsapp.net
 2025/11/06 00:52:32 [INFO] event type receipt dir  chat 51958662499@s.whatsapp.net sender  msg_id 
 2025/11/06 00:52:32 [INFO] filtered reason filter_chain_reject dir  chat 51958662499@s.whatsapp.net from 
+2025/11/06 00:52:42 [INFO] event type chat_presence dir  chat 10247959744612@s.whatsapp.net sender 10247959744612@lid msg_id 
+2025/11/06 00:52:44 [INFO] event type *events.PushName dir  chat  sender  msg_id 
+2025/11/06 00:52:44 [INFO] filtered reason filter_chain_reject dir  chat  from 
+2025/11/06 00:52:44 [INFO] event type message dir in chat 10247959744612@s.whatsapp.net sender 10247959744612:89@lid msg_id 3EB0B5B30B53648ADAD4BB
+2025/11/06 00:52:44 [INFO] markread_ok chat 10247959744612@s.whatsapp.net msg_id 3EB0B5B30B53648ADAD4BB t_ms 0
+2025/11/06 00:52:44 [INFO] agg_window_start msg ventana de espera de mensajes inicializada, esperando chat 10247959744612@s.whatsapp.net ventana_seg 5 mensajes_acumulados 0
+2025/11/06 00:52:44 [INFO] agg_window_reset_message msg detectado nuevo mensaje dentro de la ventana de espera de mensajes, reiniciando tiempo de espera chat 10247959744612@s.whatsapp.net ventana_seg 5 mensajes_acumulados 1
+2025/11/06 00:52:49 [INFO] event type chat_presence dir  chat 10247959744612@s.whatsapp.net sender 10247959744612@lid msg_id 
+2025/11/06 00:52:51 [INFO] event type message dir in chat 10247959744612@s.whatsapp.net sender 10247959744612:89@lid msg_id 3EB0F86A2DF160D6772BFD
+2025/11/06 00:52:51 [INFO] markread_ok chat 10247959744612@s.whatsapp.net msg_id 3EB0F86A2DF160D6772BFD t_ms 1
+2025/11/06 00:52:51 [INFO] agg_window_start msg ventana de espera de mensajes inicializada, esperando chat 10247959744612@s.whatsapp.net ventana_seg 5 mensajes_acumulados 0
+2025/11/06 00:52:51 [INFO] agg_window_reset_message msg detectado nuevo mensaje dentro de la ventana de espera de mensajes, reiniciando tiempo de espera chat 10247959744612@s.whatsapp.net ventana_seg 5 mensajes_acumulados 1
+2025/11/06 00:52:56 [WARN] send_error err Post "http://127.0.0.1:8080/api/send": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2025/11/06 00:53:03 [WARN] send_error err Post "http://127.0.0.1:8080/api/send": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2025/11/06 00:53:40 [INFO] event type chat_presence dir  chat 264853520420925@s.whatsapp.net sender 264853520420925@lid msg_id 
+2025/11/06 00:53:46 [INFO] event type message dir in chat 51958662499@s.whatsapp.net sender 51958662499:88@s.whatsapp.net msg_id 3F9EEDAB5D9FD08FAFD4
+2025/11/06 00:53:46 [INFO] markread_ok chat 51958662499@s.whatsapp.net msg_id 3F9EEDAB5D9FD08FAFD4 t_ms 1
+2025/11/06 00:53:46 [INFO] agg_window_start msg ventana de espera de mensajes inicializada, esperando chat 51958662499@s.whatsapp.net ventana_seg 5 mensajes_acumulados 0
+2025/11/06 00:53:46 [INFO] agg_window_reset_message msg detectado nuevo mensaje dentro de la ventana de espera de mensajes, reiniciando tiempo de espera chat 51958662499@s.whatsapp.net ventana_seg 5 mensajes_acumulados 1
+2025/11/06 00:53:46 [INFO] message chat 51958662499@s.whatsapp.net from 51958662499:88@s.whatsapp.net text si necesito un auto text_len 19
+2025/11/06 00:53:58 [INFO] bob_backend_reply from 51958662499:88@s.whatsapp.net score 0 category cold reply_len 93
+2025/11/06 00:54:01 [INFO] event type message dir out chat 51958662499@s.whatsapp.net sender  msg_id 3EB03BF57ED099137F31F6
+2025/11/06 00:54:01 [INFO] reply_bob_backend chat 51958662499@s.whatsapp.net count 1 reply_len 93 reply_preview Lo siento, tuve un problema consultando las subastas disponibles. ¿Podrías intentar de nuevo? t_pre_delay_ms 900 t_typing_ms 2677
+2025/11/06 00:54:01 [INFO] filtered reason direction_out chat 51958662499@s.whatsapp.net
+2025/11/06 00:54:01 [INFO] event type receipt dir  chat 51958662499@s.whatsapp.net sender  msg_id 
+2025/11/06 00:54:01 [INFO] filtered reason filter_chain_reject dir  chat 51958662499@s.whatsapp.net from 
+2025/11/06 00:54:27 [INFO] event type chat_presence dir  chat 10247959744612@s.whatsapp.net sender 10247959744612@lid msg_id 
+2025/11/06 00:54:29 [INFO] event type chat_presence dir  chat 10247959744612@s.whatsapp.net sender 10247959744612@lid msg_id 
+2025/11/06 00:54:29 [INFO] event_any type chat_presence chat 10247959744612@s.whatsapp.net from 10247959744612@lid
+2025/11/06 00:54:29 [INFO] event type chat_presence dir  chat 10247959744612@s.whatsapp.net sender 10247959744612@lid msg_id 
+2025/11/06 00:54:30 [INFO] event type message dir in chat 10247959744612@s.whatsapp.net sender 10247959744612:89@lid msg_id 3EB0865D5FA26D2AD2B6BB
+2025/11/06 00:54:30 [INFO] markread_ok chat 10247959744612@s.whatsapp.net msg_id 3EB0865D5FA26D2AD2B6BB t_ms 0
+2025/11/06 00:54:30 [INFO] agg_window_start msg ventana de espera de mensajes inicializada, esperando chat 10247959744612@s.whatsapp.net ventana_seg 5 mensajes_acumulados 0
+2025/11/06 00:54:30 [INFO] agg_window_reset_message msg detectado nuevo mensaje dentro de la ventana de espera de mensajes, reiniciando tiempo de espera chat 10247959744612@s.whatsapp.net ventana_seg 5 mensajes_acumulados 1
+2025/11/06 00:54:42 [WARN] send_error err Post "http://127.0.0.1:8080/api/send": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2025/11/06 00:54:45 [INFO] event type chat_presence dir  chat 280715254067228@s.whatsapp.net sender 280715254067228@lid msg_id 
+2025/11/06 00:54:48 [INFO] event type message dir in chat 51977425547@s.whatsapp.net sender 51977425547:75@s.whatsapp.net msg_id 3EB09B31FCB2A32DCA78F0
+2025/11/06 00:54:48 [INFO] markread_ok chat 51977425547@s.whatsapp.net msg_id 3EB09B31FCB2A32DCA78F0 t_ms 1
+2025/11/06 00:54:48 [INFO] agg_window_start msg ventana de espera de mensajes inicializada, esperando chat 51977425547@s.whatsapp.net ventana_seg 5 mensajes_acumulados 0
+2025/11/06 00:54:48 [INFO] agg_window_reset_message msg detectado nuevo mensaje dentro de la ventana de espera de mensajes, reiniciando tiempo de espera chat 51977425547@s.whatsapp.net ventana_seg 5 mensajes_acumulados 1
+2025/11/06 00:54:48 [INFO] message chat 51977425547@s.whatsapp.net from 51977425547:75@s.whatsapp.net text necesito un auto text_len 16
+2025/11/06 00:55:15 [INFO] bob_backend_reply from 51977425547:75@s.whatsapp.net score 14 category discarded reply_len 93
+2025/11/06 00:55:18 [INFO] event type message dir out chat 51977425547@s.whatsapp.net sender  msg_id 3EB07BFD9CECE3967BB457
+2025/11/06 00:55:18 [INFO] filtered reason direction_out chat 51977425547@s.whatsapp.net
+2025/11/06 00:55:18 [INFO] reply_bob_backend chat 51977425547@s.whatsapp.net count 1 reply_len 93 reply_preview Lo siento, tuve un problema consultando las subastas disponibles. ¿Podrías intentar de nuevo? t_pre_delay_ms 900 t_typing_ms 2486
+2025/11/06 00:55:19 [INFO] event type receipt dir  chat 280715254067228@s.whatsapp.net sender  msg_id 
+2025/11/06 00:55:19 [INFO] filtered reason filter_chain_reject dir  chat 280715254067228@s.whatsapp.net from 
+2025/11/06 00:55:19 [INFO] event type receipt dir  chat 51977425547@s.whatsapp.net sender  msg_id 
+2025/11/06 00:55:19 [INFO] filtered reason filter_chain_reject dir  chat 51977425547@s.whatsapp.net from 
+2025/11/06 00:56:42 [INFO] event type receipt dir  chat 51977425547@s.whatsapp.net sender  msg_id 
+2025/11/06 00:56:42 [INFO] filtered reason filter_chain_reject dir  chat 51977425547@s.whatsapp.net from 
+2025/11/06 00:56:48 [INFO] event type chat_presence dir  chat 120363405974723838@g.us sender 280715254067228@lid msg_id 
+2025/11/06 00:56:49 [INFO] event type message dir in chat 120363405974723838@g.us sender 280715254067228:75@lid msg_id 3EB0277D3BD867B1682D3B
+2025/11/06 00:56:49 [INFO] markread_ok chat 120363405974723838@g.us msg_id 3EB0277D3BD867B1682D3B t_ms 2
+2025/11/06 00:56:49 [INFO] agg_window_start msg ventana de espera de mensajes inicializada, esperando chat 120363405974723838@g.us ventana_seg 5 mensajes_acumulados 0
+2025/11/06 00:56:49 [INFO] agg_window_reset_message msg detectado nuevo mensaje dentro de la ventana de espera de mensajes, reiniciando tiempo de espera chat 120363405974723838@g.us ventana_seg 5 mensajes_acumulados 1
+2025/11/06 00:56:49 [INFO] message chat 120363405974723838@g.us from 280715254067228:75@lid text habla text_len 5
+2025/11/06 00:57:00 [INFO] bob_backend_reply from 280715254067228:75@lid score 0 category cold reply_len 138
+2025/11/06 00:57:05 [INFO] event type message dir out chat 120363405974723838@g.us sender  msg_id 3EB034F875BE15F5983C3F
+2025/11/06 00:57:05 [INFO] filtered reason direction_out chat 120363405974723838@g.us
+2025/11/06 00:57:05 [INFO] reply_bob_backend chat 120363405974723838@g.us count 1 reply_len 138 reply_preview ¡Hola! Soy tu Agente Orquestador de BOB Subastas. Estoy aquí para ayudarte con cualquier pregunta que tengas. ¿En qué pu… t_pre_delay_ms 900 t_typing_ms 3918
+2025/11/06 00:57:05 [INFO] event type receipt dir  chat 120363405974723838@g.us sender  msg_id 
+2025/11/06 00:57:05 [INFO] filtered reason filter_chain_reject dir  chat 120363405974723838@g.us from 
+2025/11/06 00:57:55 [INFO] event type receipt dir  chat 120363405974723838@g.us sender  msg_id 
+2025/11/06 00:57:55 [INFO] filtered reason filter_chain_reject dir  chat 120363405974723838@g.us from 
