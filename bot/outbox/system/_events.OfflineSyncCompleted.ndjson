@@ -50,3 +50,8 @@
 {"event_type":"*events.OfflineSyncCompleted","event_raw":null,"extra":{"lang":"es","tenant":"acme"},"at":"2025-11-06T05:16:24Z"}
 {"event_type":"*events.OfflineSyncCompleted","event_raw":null,"extra":{"lang":"es","tenant":"acme"},"at":"2025-11-06T05:21:33Z"}
 {"event_type":"*events.OfflineSyncCompleted","event_raw":null,"extra":{"lang":"es","tenant":"acme"},"at":"2025-11-06T05:23:15Z"}
+{"event_type":"*events.OfflineSyncCompleted","event_raw":null,"extra":{"lang":"es","tenant":"acme"},"at":"2025-11-06T05:42:24Z"}
+{"event_type":"*events.OfflineSyncCompleted","event_raw":null,"extra":{"lang":"es","tenant":"acme"},"at":"2025-11-06T05:43:51Z"}
+{"event_type":"*events.OfflineSyncCompleted","event_raw":null,"extra":{"lang":"es","tenant":"acme"},"at":"2025-11-06T05:44:01Z"}
+{"event_type":"*events.OfflineSyncCompleted","event_raw":null,"extra":{"lang":"es","tenant":"acme"},"at":"2025-11-06T05:45:00Z"}
+{"event_type":"*events.OfflineSyncCompleted","event_raw":null,"extra":{"lang":"es","tenant":"acme"},"at":"2025-11-06T05:46:56Z"}
