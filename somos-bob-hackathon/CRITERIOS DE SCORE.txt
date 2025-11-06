@@ -1,0 +1,109 @@
+#  PROCESO DE EVALUACIÓN
+## FASE 1: RECOPILACIÓN DE DATOS (por prioridad)
+
+- Datos del Agente Comercial (datos_scoring_identificados)
+- Datos del Agente Atencion (datos_scoring_identificados)
+- Conversación completa con todos los agentes
+- Datos del perfil inicial del prospecto
+- Comportamiento observado (timing, engagement)
+
+## FASE 2: ANÁLISIS MULTIDIMENSIONAL (0-100 puntos)
+
+**DIMENSIÓN 1: Perfil Demográfico (0-10 puntos)**
+
+- Ubicación: +2 (Perú) / +1 (Latinoamérica) / +0.5 (Otros)
+- Profesión: +4 (empresario/PYME) / +2 (empleado) / +1 (no especifica)
+- Coherencia: +2 (consistente) / +1 (parcial) / +0 (incoherente)
+- Contexto apropiado: +2 (edad/situación coherente)
+
+**DIMENSIÓN 2: Comportamiento Digital (0-15 puntos)**
+
+- Velocidad respuesta: +4 (<5min) / +2 (<30min) / +1 (>30min)
+- Nivel detalle: +4 (específico) / +2 (moderado) / +1 (vago)
+- Engagement: +4 (preguntas específicas) / +2 (completo) / +1 (básico)
+- Completitud: +3 (datos completos) / +2 (parcial) / +1 (mínima)
+
+**DIMENSIÓN 3: Capacidad Financiera (0-25 puntos)**
+- Presupuesto mencionado:
++8: Monto específico ("tengo S/50,000")
++6: Rango definido ("entre S/30,000-60,000")
++4: Referencia indirecta ("algo accesible")
++2: Vago ("depende del precio")
++0: No menciona
+
+- Autoridad de compra:
++8: Decisor directo ("yo decido", "mi empresa")
++6: Influenciador fuerte ("consulto pero aprueban")
++4: Participante activo ("evaluamos")
++2: Consultor ("tengo que preguntar")
++0: Sin autoridad ("solo viendo")
+
+- Timeframe:
++5: Inmediato ("esta semana") / +4: Corto ("este mes")
++3: Mediano ("2-3 meses") / +1: Largo ("próximo año")
++0: Sin urgencia ("algún día")
+
+- Experiencia en compras similares:
++4: Tiene experiencia / +2: Poca / +0: Primera vez
+
+**DIMENSIÓN 4: Necesidad/Urgencia (0-15 puntos)**
+
+- Nivel urgencia: +6 (inmediato) / +4 (pronto) / +2 (futuro) / +0 (sin urgencia)
+- Consecuencias: +5 (críticas) / +3 (importantes) / +1 (menores) / +0 (ninguna)
+- Presión temporal: +4 (deadline específico) / +2 (general) / +1 (flexible) / +0 (ninguna)
+
+**DIMENSIÓN 5: Experiencia Previa (0-10 puntos)**
+
+- En subastas: +5 (experimentado) / +3 (alguna) / +1 (novato) / +0 (nunca)
+- En compras online: +5 (frecuente) / +3 (ocasional) / +1 (rara vez) / +0 (primera vez)
+
+**DIMENSIÓN 6: Engagement Actual (0-10 puntos)**
+
+- Disponibilidad: +3 (explícita) / +1 (implícita) / +0 (no clara)
+- Interés en demo/visita: +4 (solicita) / +2 (acepta) / +0 (rechaza)
+- Solicitudes específicas: +3 (pide detalles) / +1 (básicas) / +0 (ninguna)
+
+**DIMENSIÓN 7: Contexto de Compra (0-15 puntos)**
+- Motivo de compra:
++5: Reemplazo urgente (dañado, crítico)
++4: Expansión de negocio / +3: Mejora planificada
++2: Exploración oportunidades / +1: Curiosidad general
+
+- Investigación realizada:
++5: Comparó múltiples opciones / +3: Investigó parcialmente / +1: Primera búsqueda
+
+- Conocimiento del producto:
++5: Experto (especificaciones) / +3: Intermedio (básicas) / +1: Básico (conceptos)
+
+### BOOSTS Y PENALIZACIONES
+**BOOSTS (+3 a +7 puntos):**
+- Referido por cliente: +7
+- Mencionó competencia específica: +6
+- Solicitó especialista: +6
+- Timeframe con fecha específica: +5
+- Preguntó garantías/servicio: +4
+- Conocimiento técnico específico: +3
+
+**PENALIZACIONES (-2 a -6 puntos):**
+
+- Comportamiento "tire-patadas": -6
+- Inconsistencias en información: -5
+- Respuestas evasivas sobre presupuesto: -4
+- Múltiples consultas sin compromiso: -2
+
+
+## CLASIFICACIÓN Y ACCIONES
+
+**LEAD CALIENTE (85-100 puntos)**
+- Contacto: Inmediato (1 hora) por Vendedor especialista
+- Seguimiento: Llamada ó mensaje whatsapp + seguimiento 4h
+
+**LEAD TIBIO (65-84 puntos)**
+- Contacto: 4-8 horas por Vendedor especialista
+- Seguimiento: Llamada ó mensaje whatsapp + seguimiento 24h
+
+**LEAD FRÍO (45-64 puntos)**
+- Contacto: Invitar a la comunidad
+- Seguimiento: Siguimiento un mes
+
+**DESCARTADO (<45 puntos)**
