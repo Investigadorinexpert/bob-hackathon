@@ -831,6 +831,57 @@ func (r *SimpleRouter) incOutboundFor(chatKey string) {
 
 //
 // =======================
+// Integración con Backend BOB (Kevin)
+// =======================
+//
+
+func callBOBBackend(fromPhone string, message string, logger jlog) string {
+	sessionId := "wa-" + fromPhone
+
+	payload := map[string]string{
+		"sessionId": sessionId,
+		"message":   message,
+		"channel":   "whatsapp",
+	}
+	jsonData, _ := json.Marshal(payload)
+
+	resp, err := http.Post(
+		"http://localhost:3000/api/chat/message",
+		"application/json",
+		bytes.NewBuffer(jsonData),
+	)
+	if err != nil {
+		logger.Warn("bob_backend_error", "err", err)
+		return "Lo siento, hubo un error procesando tu mensaje."
+	}
+	defer resp.Body.Close()
+
+	var result map[string]interface{}
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		logger.Warn("bob_backend_decode_error", "err", err)
+		return "Error procesando la respuesta."
+	}
+
+	if reply, ok := result["reply"].(string); ok {
+		// Log del lead score si viene
+		if score, ok2 := result["leadScore"].(float64); ok2 {
+			if category, ok3 := result["category"].(string); ok3 {
+				logger.Info("bob_backend_reply",
+					"from", fromPhone,
+					"score", int(score),
+					"category", category,
+					"reply_len", len([]rune(reply)),
+				)
+			}
+		}
+		return reply
+	}
+
+	return "No se pudo obtener respuesta del sistema."
+}
+
+//
+// =======================
 // HTTP client helpers → engine
 // =======================
 //
@@ -1003,26 +1054,29 @@ func main() {
 	onFlush := func(chat string, count int) {
 		// Pequeña pre-pausa separada de la ventana
 		time.Sleep(cfg.PreReplyDelay)
-		// Recupera el último envelope memorizado y evalúa reglas
+		// Recupera el último envelope memorizado
 		router.muLast.Lock()
 		env, ok := router.lastByChat[chat]
 		router.muLast.Unlock()
-		if ok && router.eng != nil {
-			res, handled := router.eng.Eval(context.Background(), env)
-			if handled && res.Handled && strings.TrimSpace(res.Reply) != "" {
-				wait := router.replyWithTyping(chat, res.Reply)
-				router.log.Info("reply_batch",
+
+		if ok && strings.TrimSpace(env.Text) != "" {
+			// Llamar al backend BOB de Kevin en vez del engine de reglas
+			reply := callBOBBackend(env.SenderJID, env.Text, logger)
+
+			if strings.TrimSpace(reply) != "" {
+				wait := router.replyWithTyping(chat, reply)
+				logger.Info("reply_bob_backend",
 					"chat", chat,
 					"count", count,
-					"reply_len", len([]rune(res.Reply)),
-					"reply_preview", previewText(res.Reply, maxLogText),
+					"reply_len", len([]rune(reply)),
+					"reply_preview", previewText(reply, maxLogText),
 					"t_pre_delay_ms", cfg.PreReplyDelay.Milliseconds(),
 					"t_typing_ms", wait.Milliseconds(),
 				)
 				return
 			}
 		}
-		// Fallback si no hubo respuesta de reglas
+		// Fallback si no hubo respuesta del backend
 		msg := "Llegaron " + strconv.Itoa(count) + " mensaje(s) en la ventana."
 		router.replyWithTyping(chat, msg)
 	}
