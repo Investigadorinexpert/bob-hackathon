@@ -106,3 +106,92 @@ type HealthResponse struct {
 	Timestamp time.Time `json:"timestamp"`
 	Service   string    `json:"service"`
 }
+
+// LeadData representa datos detallados de un lead para scoring
+type LeadData struct {
+	SessionID    string    `json:"sessionId"`
+	FirstMessageAt time.Time `json:"firstMessageAt"`
+	LastMessageAt  time.Time `json:"lastMessageAt"`
+	MessageCount   int       `json:"messageCount"`
+
+	PerfilDemografico    PerfilDemografico    `json:"perfilDemografico"`
+	ComportamientoDigital ComportamientoDigital `json:"comportamientoDigital"`
+	CapacidadFinanciera  CapacidadFinanciera  `json:"capacidadFinanciera"`
+	NecesidadUrgencia    NecesidadUrgencia    `json:"necesidadUrgencia"`
+	ExperienciaPrevia    ExperienciaPrevia    `json:"experienciaPrevia"`
+	EngagementActual     EngagementActual     `json:"engagementActual"`
+	ContextoCompra       ContextoCompra       `json:"contextoCompra"`
+
+	Boosts         []string `json:"boosts,omitempty"`
+	Penalizaciones []string `json:"penalizaciones,omitempty"`
+}
+
+// PerfilDemografico dimension 1 (0-10 puntos)
+type PerfilDemografico struct {
+	Ubicacion     string `json:"ubicacion"`
+	Profesion     string `json:"profesion"`
+	Coherencia    string `json:"coherencia"`
+	Contexto      string `json:"contexto"`
+	Score         int    `json:"score"`
+}
+
+// ComportamientoDigital dimension 2 (0-15 puntos)
+type ComportamientoDigital struct {
+	VelocidadRespuesta string `json:"velocidadRespuesta"`
+	NivelDetalle       string `json:"nivelDetalle"`
+	Engagement         string `json:"engagement"`
+	Completitud        string `json:"completitud"`
+	Score              int    `json:"score"`
+}
+
+// CapacidadFinanciera dimension 3 (0-25 puntos)
+type CapacidadFinanciera struct {
+	PresupuestoMencionado string `json:"presupuestoMencionado"`
+	AutoridadCompra       string `json:"autoridadCompra"`
+	Timeframe             string `json:"timeframe"`
+	ExperienciaCompras    string `json:"experienciaCompras"`
+	Score                 int    `json:"score"`
+}
+
+// NecesidadUrgencia dimension 4 (0-15 puntos)
+type NecesidadUrgencia struct {
+	NivelUrgencia    string `json:"nivelUrgencia"`
+	Consecuencias    string `json:"consecuencias"`
+	PresionTemporal  string `json:"presionTemporal"`
+	Score            int    `json:"score"`
+}
+
+// ExperienciaPrevia dimension 5 (0-10 puntos)
+type ExperienciaPrevia struct {
+	EnSubastas      string `json:"enSubastas"`
+	EnComprasOnline string `json:"enComprasOnline"`
+	Score           int    `json:"score"`
+}
+
+// EngagementActual dimension 6 (0-10 puntos)
+type EngagementActual struct {
+	Disponibilidad       string `json:"disponibilidad"`
+	InteresDemo          string `json:"interesDemo"`
+	SolicitudesEspecificas string `json:"solicitudesEspecificas"`
+	Score                int    `json:"score"`
+}
+
+// ContextoCompra dimension 7 (0-15 puntos)
+type ContextoCompra struct {
+	MotivoCompra        string `json:"motivoCompra"`
+	InvestigacionRealizada string `json:"investigacionRealizada"`
+	ConocimientoProducto   string `json:"conocimientoProducto"`
+	Score                  int    `json:"score"`
+}
+
+// ScoringData resultado completo del scoring
+type ScoringData struct {
+	TotalScore         int      `json:"totalScore"`
+	Category           string   `json:"category"`
+	DimensionScores    map[string]int `json:"dimensionScores"`
+	Boosts             []string `json:"boosts,omitempty"`
+	Penalizaciones     []string `json:"penalizaciones,omitempty"`
+	AccionRecomendada  string   `json:"accionRecomendada"`
+	TiempoContacto     string   `json:"tiempoContacto"`
+	TipoSeguimiento    string   `json:"tipoSeguimiento"`
+}
