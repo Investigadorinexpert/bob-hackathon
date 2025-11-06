@@ -42,6 +42,7 @@ func main() {
 	// Crear controllers
 	chatController := controllers.NewChatController()
 	leadController := controllers.NewLeadController()
+	adminController := controllers.NewAdminController(services.GetFAQService())
 
 	// Health check
 	router.GET("/health", func(ctx *gin.Context) {
@@ -67,14 +68,21 @@ func main() {
 					"delete":  "DELETE /api/chat/session/:sessionId",
 				},
 				"leads": gin.H{
-					"list":   "GET /api/leads",
-					"get":    "GET /api/leads/:sessionId",
-					"stats":  "GET /api/leads/stats",
+					"list":  "GET /api/leads",
+					"get":   "GET /api/leads/:sessionId",
+					"stats": "GET /api/leads/stats",
 				},
 				"resources": gin.H{
 					"faqs":     "GET /api/faqs",
 					"vehicles": "GET /api/vehicles",
 					"vehicle":  "GET /api/vehicles/:id",
+				},
+				"admin": gin.H{
+					"upload_faqs":      "POST /api/admin/faqs/upload",
+					"download_faqs":    "GET /api/admin/faqs/download",
+					"template_faqs":    "GET /api/admin/faqs/template",
+					"get_prompts":      "GET /api/admin/prompts",
+					"update_prompt":    "PUT /api/admin/prompts/:agent",
 				},
 			},
 		})
@@ -101,6 +109,19 @@ func main() {
 	router.GET("/api/faqs", leadController.GetFAQs)
 	router.GET("/api/vehicles", leadController.GetVehicles)
 	router.GET("/api/vehicles/:id", leadController.GetVehicleByID)
+
+	// Rutas de Admin
+	adminRoutes := router.Group("/api/admin")
+	{
+		// FAQs management
+		adminRoutes.POST("/faqs/upload", adminController.UploadFAQs)
+		adminRoutes.GET("/faqs/template", adminController.DownloadFAQsTemplate)
+		adminRoutes.GET("/faqs/download", adminController.GetFAQsAsCSV)
+
+		// Prompts management
+		adminRoutes.GET("/prompts", adminController.GetPrompts)
+		adminRoutes.PUT("/prompts/:agent", adminController.UpdatePrompt)
+	}
 
 	// Iniciar servidor
 	port := config.AppConfig.Port

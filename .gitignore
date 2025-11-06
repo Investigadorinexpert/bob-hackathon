@@ -23,6 +23,10 @@ data/*.json
 **/data/*.json
 backend/data/*.json
 
+# Datos de test
+backend/data-test/
+backend/.env.test
+
 # Logs
 logs/
 *.log

@@ -1,6 +1,7 @@
 package services
 
 import (
+	"bob-hackathon/internal/config"
 	"bob-hackathon/internal/models"
 	"encoding/csv"
 	"log"
@@ -29,7 +30,8 @@ func GetFAQService() *FAQService {
 }
 
 func (f *FAQService) loadFAQs() {
-	file, err := os.Open(filepath.Join("data", "faqs.csv"))
+	dataDir := config.AppConfig.DataDir
+	file, err := os.Open(filepath.Join(dataDir, "faqs.csv"))
 	if err != nil {
 		log.Printf("Error al abrir FAQs: %v", err)
 		return
@@ -123,4 +125,49 @@ func (f *FAQService) GetFAQsContext() string {
 	}
 
 	return context.String()
+}
+
+// ReloadFAQs recarga los FAQs desde el archivo CSV
+func ReloadFAQs() {
+	service := GetFAQService()
+	service.mu.Lock()
+	defer service.mu.Unlock()
+
+	// Limpiar FAQs actuales
+	service.faqs = []models.FAQ{}
+
+	// Recargar desde archivo
+	dataDir := config.AppConfig.DataDir
+	file, err := os.Open(filepath.Join(dataDir, "faqs.csv"))
+	if err != nil {
+		log.Printf("Error al abrir FAQs: %v", err)
+		return
+	}
+	defer file.Close()
+
+	reader := csv.NewReader(file)
+	records, err := reader.ReadAll()
+	if err != nil {
+		log.Printf("Error al leer FAQs: %v", err)
+		return
+	}
+
+	// Saltar header
+	for i, record := range records {
+		if i == 0 {
+			continue
+		}
+
+		if len(record) >= 4 {
+			faq := models.FAQ{
+				Categoria: record[0],
+				Empresa:   record[1],
+				Pregunta:  record[2],
+				Respuesta: record[3],
+			}
+			service.faqs = append(service.faqs, faq)
+		}
+	}
+
+	log.Printf("%d FAQs recargadas", len(service.faqs))
 }
