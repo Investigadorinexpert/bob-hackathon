@@ -232,10 +232,6 @@ npm run dev
 - [ ] Integración WhatsApp
 - [ ] Deploy a producción
 
-## Equipo
-
-- **Kevin Navarro** - Backend Go + Frontend React
-- **Compañero** - Bot WhatsApp
 
 ## Notas
 
