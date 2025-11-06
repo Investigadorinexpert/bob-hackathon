@@ -5,6 +5,7 @@ import (
 	"encoding/csv"
 	"log"
 	"os"
+	"path/filepath"
 	"strings"
 	"sync"
 )
@@ -28,7 +29,7 @@ func GetFAQService() *FAQService {
 }
 
 func (f *FAQService) loadFAQs() {
-	file, err := os.Open("data/faqs.csv")
+	file, err := os.Open(filepath.Join("data", "faqs.csv"))
 	if err != nil {
 		log.Printf("Error al abrir FAQs: %v", err)
 		return

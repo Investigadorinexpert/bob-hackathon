@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"log"
 	"os"
+	"path/filepath"
 	"sync"
 	"time"
 
@@ -27,8 +28,8 @@ func GetSessionService() *SessionService {
 		sessionServiceInstance = &SessionService{
 			sessions:     make(map[string]*models.Session),
 			leads:        make(map[string]*models.Lead),
-			sessionsFile: "data/sessions.json",
-			leadsFile:    "data/leads.json",
+			sessionsFile: filepath.Join("data", "sessions.json"),
+			leadsFile:    filepath.Join("data", "leads.json"),
 		}
 		sessionServiceInstance.loadFromDisk()
 	})
