@@ -51,16 +51,16 @@ func NewChatController() *ChatController {
 	}
 }
 func (c *ChatController) GetAllSessions(ctx *gin.Context) {
-    sessions, err := services.GetSessionService().GetAllSessions()
-    if err != nil {
-        ctx.JSON(500, gin.H{"error": err.Error()})
-        return
-    }
+	sessions, err := services.GetSessionService().GetAllSessions()
+	if err != nil {
+		ctx.JSON(500, gin.H{"error": err.Error()})
+		return
+	}
 
-    ctx.JSON(200, gin.H{
-        "count":    len(sessions),
-        "sessions": sessions,
-    })
+	ctx.JSON(200, gin.H{
+		"count":    len(sessions),
+		"sessions": sessions,
+	})
 }
 
 func (c *ChatController) SendMessage(ctx *gin.Context) {
